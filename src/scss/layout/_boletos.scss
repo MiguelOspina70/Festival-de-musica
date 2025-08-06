@@ -1,0 +1,77 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mixin;
+
+.contenedor-boletos{
+    background-color: var.$verde;
+    h3{
+        color: var.$blanco;
+    }
+
+    .boletos{
+        @include mixin.contenedor;
+        @include mixin.tablet{
+            @include mixin.grid(2);
+        }
+    }
+}
+
+.pase{
+    transition: transform .3s ease-in-out ; //Efecto de transición para que al hacer hover no sea tan brusco el cambio de tamaño
+    &:hover{
+        transform: scale(1.10); //Efecto de zoom al hacer hover
+    }
+
+    &-nombre{ //Con el ampersand referenciamos el elemento padre, en este caso .pase, ya que inician con los mismo ".pase"
+        font-size: 3.6rem;
+        font-weight: 900;
+        color: var.$blanco;
+        text-align: center;
+    }
+
+    &-header, &-footer{
+        p{
+            text-align: center;
+            color: var.$blanco;
+            margin: 0
+        }
+    }
+
+    &-header{
+        background-color: var.$rosa;
+
+        p{
+            font-size: 2.2rem;
+            padding: 1rem 0;
+            text-transform: uppercase;
+        }
+    }
+
+    &-body{
+        background-color: var.$blanco;
+        ul{
+            @include mixin.reset-list;
+            li{
+                padding: 2rem;
+                border-bottom: 1px solid #e1e1e1;
+            }
+        }
+    }
+
+    &-footer{
+        background-color: var.$blanco;
+        padding: 3rem;
+
+        p{
+            font-size: 2.8rem;
+            font-weight: 900;
+            background-color: var.$morado;
+            padding: 1rem 0;
+            border-radius: 1rem;
+
+            &:hover{
+                cursor: pointer;
+                background-color: darken(var.$morado, 10%);
+            }
+        }
+    }
+}

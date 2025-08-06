@@ -16,6 +16,10 @@ body {
     font-style: normal;
     color: var.$negro;
     font-size: 2rem;
+
+    &.overflow-hidden {
+        overflow: hidden; // Evita el scroll cuando se abre el modal
+    }
 }
 p {
     color: var.$negro;

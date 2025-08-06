@@ -23,3 +23,21 @@
         @content;
     }
 }
+
+@mixin contenedor{
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+@mixin grid($columnas : 1, $gap : 5rem){ // Definimos un mixin para crear un grid con el número de columnas que le pasemos como parámetro y la separación, pero si no le pasamos gap, por defecto será de 5rem
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $gap;
+}
+
+@mixin reset-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

@@ -4,6 +4,19 @@
 .header{  // Header de la aplicacion
     background-color: var.$verde;
 
+    @include mixin.tablet{
+
+        &.fijo{
+            position: fixed; // Fija el header en la parte superior de la pantalla
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10; // Asegura que el header esté por encima de otros elementos
+            box-shadow: 0 0.5rem 1rem rgba(var.$negro, 0.2); // Sombra para darle profundidad
+        }
+    }
+    
+
     .contenido-header{ // Contenido del header, vemos que conn sass se puede anidar las clases que esten dentro de otra clase o un contenedor padre
         padding: 2rem;
         @include mixin.tablet{ // Importamos el mixin para tablet, que es un media query que tenemos en la carpeta base
@@ -25,7 +38,7 @@
             color: var.$blanco;
             font-size: 2,4rem;
 
-            &:hover{ // Con el & podemos referenciar a la clase padre, en este caso a la etiqueta a
+            &:hover, &.activo{ // Con el & podemos referenciar a la clase padre, en este caso a la etiqueta a
                 color: var.$amarillo;
             }
         }
