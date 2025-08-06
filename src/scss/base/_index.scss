@@ -1,0 +1,5 @@
+
+// Este archivo almacena las importaciones de los archivos SCSS que se encuentran en la carpeta base, para despues ser usados en el archivo app.scss
+@forward 'normalize';
+@forward 'variables'; // Importo el archivo variables.scss, para utilizarlo en este
+@forward 'globales';

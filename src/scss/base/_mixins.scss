@@ -1,0 +1,25 @@
+@use 'variables' as var; // Importamos las variables que tenemos en la carpeta base, para poder reutilizarlas en este archivo
+
+@mixin telefono{
+    @media (min-width: var.$telefono) {
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media (min-width: var.$tablet) {
+        @content;
+    }
+}
+
+@mixin escritorio{
+    @media (min-width: var.$escritorio) {
+        @content;
+    }
+}
+
+@mixin grande{
+    @media (min-width: var.$grande) {
+        @content;
+    }
+}
